@@ -1,0 +1,302 @@
+
+body {
+  background: url('griddy_tile.png'), radial-gradient(#fff 0%, #DDDDDD 50%);
+  background-repeat: repeat, no-repeat;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Work Sans';
+  display: grid;
+  grid-template-rows: 5.1875rem 1fr;
+  -webkit-font-smoothing: antialiased;
+}
+*::selection {
+  background: #0054F2;
+  color: white;
+}
+
+div.pixel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 28px;
+  width: 28px;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 5.6875rem;
+}
+
+header img {
+  height: 2.125rem;
+  align-self: center;
+}
+
+ul {
+  height: 100%;
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 3.375rem;
+  margin: 0;
+}
+
+ul a {
+  font-size: 1.3em;
+  color: #464646;
+  text-decoration: none;
+  font-weight: bold;
+  display: grid;
+  align-content: center;
+  height: 100%;
+  transition: 300ms;
+  text-transform: lowercase;
+}
+
+ul a.active {
+  color: #0054F2;
+}
+
+ul a:hover {
+  color: #0054F2;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+main .content {
+  place-self: center;
+  display: grid;
+  justify-items: center;
+  transform: translateY(-2rem);
+  opacity: 0;
+  animation: alot 2000ms forwards;
+  animation-delay: 500ms;
+}
+
+main .content svg {
+  opacity: 0;
+  animation: draw 2000ms forwards;
+  animation-delay: 1000ms;
+}
+
+.draw {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 5s linear forwards;
+  animation-delay: 2s;
+}
+
+.draw1 {
+  animation-delay: 2000ms;
+}
+
+.draw2 {
+  animation-delay: 2100ms;
+}
+
+.draw3 {
+  animation-delay: 2200ms;
+}
+
+.draw4 {
+  animation-delay: 2300ms;
+}
+
+.draw5 {
+  animation-delay: 2400ms;
+}
+
+.appear {
+  opacity: 0;
+  animation: appear 700ms forwards;
+  animation-delay: 2s;
+}
+
+.appear1 {
+  animation-delay: 2000ms;
+}
+
+.appear2 {
+  animation-delay: 2400ms;
+}
+
+main h1 {
+  font-size: 5em;
+  margin-bottom: 7rem;
+  color: #464646;
+}
+
+main h1 span {
+  color: #0054F2;
+}
+
+.next {
+  position: absolute;
+  bottom: 5em;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 500ms forwards;
+  opacity: 0;
+  animation-delay: 2000ms;
+}
+
+.next:hover a {
+  color: #0054F2;
+}
+
+.next:hover .cls-15 {
+  fill: #0054F2;
+}
+
+.next svg {
+  animation: bounce 1s infinite;
+}
+
+.next a {
+  font-weight: bold;
+  color: #464646;
+  font-size: 1.5625em;
+  text-transform: lowercase;
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+}
+
+.cases {
+  display: none;
+}
+
+.case {
+  max-width: 59.375rem;
+  background: #fff;
+  margin: 0 auto;
+  transform: translatex(-8rem);
+  padding: 3.25rem;
+  display: flex;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+}
+
+.case div {
+  max-width: 32rem;
+}
+
+.case img {
+  transform: translatex(11.25rem);
+}
+
+h2 {
+  font-size: 2.5em;
+  color: #464646;
+  margin: 0;
+}
+
+.case p {
+  margin: 0;
+  margin-top: 3.0625rem;
+  color: #464646;
+  font-size: 1em;
+  line-height: 1.875em;
+}
+
+.case button {
+  margin-top: 3rem;
+}
+
+button {
+  background: #0054F2;
+  color: #fff;
+  padding: 0.9375rem 1.6875rem;
+  font-size: 1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 2px;
+  border: none;
+}
+
+.bling {
+  animation: bling 1s infinite ease-in-out;
+}
+
+@keyframes bling {
+  0% {
+    background: rgba(0, 84, 242, 0);
+  }
+  50% {
+    background: rgba(0, 84, 242, 0.5);
+  }
+  100% {
+    background: rgba(0, 84, 242, 0);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translatey(0);
+  }
+  30% {
+    transform: translatey(1rem);
+  }
+  60% {
+    transform: translatey(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+@keyframes alot {
+  10% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  30% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translatey(-5rem);
+    opacity: 1;
+  }
+  100% {
+    transform: translatey(-5rem);
+    opacity: 1;
+  }
+}
+
+@keyframes draw {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
