@@ -1,17 +1,23 @@
-
 body {
-  background: url('../images/griddy_tile.png'), radial-gradient(#fff 0%, #DDDDDD 50%);
+  background: url("../images/griddy_tile.png"),
+    radial-gradient(#fff 0%, #dddddd 50%);
   background-repeat: repeat, no-repeat;
   height: 100vh;
   margin: 0;
   overflow: hidden;
-  font-family: 'Work Sans';
+  font-family: "Work Sans";
   display: grid;
   grid-template-rows: 5.1875rem 1fr;
   -webkit-font-smoothing: antialiased;
 }
+.dev {
+  --topic-color: #F83A19;
+}
+.design {
+  --topic-color: #0054f2;
+}
 *::selection {
-  background: #0054F2;
+  background: var(--topic-color);
   color: white;
 }
 
@@ -21,6 +27,8 @@ div.pixel {
   left: 0;
   height: 28px;
   width: 28px;
+  background: var(--topic-color);
+  opacity: 0;
 }
 
 header {
@@ -57,11 +65,11 @@ ul a {
 }
 
 ul a.active {
-  color: #0054F2;
+  color: var(--topic-color);
 }
 
 ul a:hover {
-  color: #0054F2;
+  color: var(--topic-color);
 }
 
 main {
@@ -86,31 +94,52 @@ main .content svg {
   animation-delay: 1000ms;
 }
 
+.cls-1 {
+  fill: #464646;
+}
+
+.cls-2 {
+  fill: none;
+  stroke: #464646;
+  stroke-miterlimit: 10;
+  stroke-width: 4px;
+}
+
+.cls-3 {
+  fill: var(--topic-color);
+}
+.a,
+.d {
+  fill: #464646;
+}
+
+.b {
+  fill: none;
+  stroke-miterlimit: 10;
+}
+
+.b,
+.c {
+  stroke: #464646;
+  stroke-width: 2px;
+}
+.c {
+  fill: #fff;
+}
+.d {
+  opacity: 0.3;
+}
+.o {
+  stroke: var(--topic-color);
+}
+.fo {
+  fill: var(--topic-color);
+}
 .draw {
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
   animation: dash 5s linear forwards;
   animation-delay: 2s;
-}
-
-.draw1 {
-  animation-delay: 2000ms;
-}
-
-.draw2 {
-  animation-delay: 2100ms;
-}
-
-.draw3 {
-  animation-delay: 2200ms;
-}
-
-.draw4 {
-  animation-delay: 2300ms;
-}
-
-.draw5 {
-  animation-delay: 2400ms;
 }
 
 .appear {
@@ -134,7 +163,7 @@ main h1 {
 }
 
 main h1 span {
-  color: #0054F2;
+  color: var(--topic-color);
 }
 
 .next {
@@ -150,11 +179,11 @@ main h1 span {
 }
 
 .next:hover a {
-  color: #0054F2;
+  color: var(--topic-color);
 }
 
 .next:hover .cls-15 {
-  fill: #0054F2;
+  fill: var(--topic-color);
 }
 
 .next svg {
@@ -211,7 +240,7 @@ h2 {
 }
 
 button {
-  background: #0054F2;
+  background: var(--topic-color);
   color: #fff;
   padding: 0.9375rem 1.6875rem;
   font-size: 1em;
@@ -227,13 +256,13 @@ button {
 
 @keyframes bling {
   0% {
-    background: rgba(0, 84, 242, 0);
+    opacity: 0;
   }
   50% {
-    background: rgba(0, 84, 242, 0.5);
+    opacity: 0.5;
   }
   100% {
-    background: rgba(0, 84, 242, 0);
+    opacity: 0;
   }
 }
 
