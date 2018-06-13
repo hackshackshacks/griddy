@@ -37,5 +37,28 @@ const draw = {
     })
   }
 }
+const cases = {
+  elements: {
+    cases: document.querySelector('.cases'),
+    main: document.querySelector('main'),
+    buttons: document.querySelectorAll('.changeview')
+  },
+  init: function () {
+    this.elements.cases.classList.add('inactive')
+    this.handleEvents()
+  },
+  handleEvents: function () {
+    this.elements.buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        this.toggleView()
+      })
+    })
+  },
+  toggleView: function () {
+    this.elements.cases.classList.toggle('inactive')
+    this.elements.main.classList.toggle('inactive')
+  }
+}
+cases.init()
 draw.init()
 pixel.init()
